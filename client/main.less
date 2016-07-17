@@ -1,10 +1,14 @@
 // Mixins & Vars
 @import "./mixins.less";
+@import "./variables.less";
 
 // Import component styles
 @import "{}/imports/components/gameScreen/gameScreen.less";
 
 // Default styles
-html, body, .full-height {
-	height: 100%;
+html, body, .full-height { height: 100%; }
+body { background-color: @body-bg; }
+.main-container {
+	max-width: 800px;
+	margin: auto;
 }

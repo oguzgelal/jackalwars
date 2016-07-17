@@ -1,7 +1,10 @@
-<table class="ga-table">
+<table class="ga-table" style="width:{{mapTableWidth}}; height:{{mapTableHeight}};">
 	<tr ng-repeat="mapRow in mapData">
-		<td ng-repeat="mapCol in mapRow">
-			<div class="ga-cell"></div>
+		<td ng-repeat="mapCell in mapRow">
+			<div class="ga-cell" 
+			ng-class="(selectedCell==mapCell.id) ? 'active' : ''" 
+			ng-click="selectCell(mapCell)">
+			</div>
 		</td>
 	</tr>
 </table>
