@@ -57,7 +57,17 @@ class GameScreenCtrl {
 
 		$scope.selectCell = function(cell){
 			if ($scope.selectedCell == cell.id){ $scope.selectedCell = ""; }
-			else{ $scope.selectedCell = cell.id; }
+			else{
+				$scope.animateCell(cell, 'rubberBand');
+				$scope.selectedCell = cell.id;
+			}
+		};
+
+		$scope.animateCell = function(cell, type){
+			angular.element('#'+cell.id).addClass(type);
+			angular.element('#'+cell.id).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				angular.element(this).removeClass(type);
+			});
 		};
 
 		$scope.resetMap();

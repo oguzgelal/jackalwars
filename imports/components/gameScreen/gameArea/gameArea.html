@@ -1,7 +1,7 @@
 <table class="ga-table" style="width:{{mapTableWidth}}; height:{{mapTableHeight}};">
 	<tr ng-repeat="mapRow in mapData">
 		<td ng-repeat="mapCell in mapRow">
-			<div class="ga-cell" 
+			<div class="ga-cell animated" id="{{mapCell.id}}"
 			ng-class="(selectedCell==mapCell.id) ? 'active' : ''" 
 			ng-click="selectCell(mapCell)">
 			</div>
