@@ -16,8 +16,8 @@ class GameMap {
 		let cellCount = this.mapRowCnt * this.mapColCnt;
 		let cellCountAverage = Math.round(Math.sqrt(this.mapRowCnt * this.mapColCnt));
 		let cellSize = (cellCountAverage * 13);
-		this.mapTableWidth = (cellSize*this.mapColCnt)+"px";
-		this.mapTableHeight = (cellSize*this.mapRowCnt)+"px";
+		this.mapTableWidth = (cellSize*this.mapColCnt);
+		this.mapTableHeight = (cellSize*this.mapRowCnt);
 	};
 
 	resetMap(){

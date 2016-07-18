@@ -1,17 +1,29 @@
 <div class="row full-height">
-	<div class="col-sm-8 col-xs-12 full-height">
-		<div class="row gs-game-area">
+	<!-- when md or bigger, push 3 and end up in the middle -->
+	<!-- on sm or smaller, ignore push and end up on the left -->
+	<div class="col-md-6 col-md-push-3 col-sm-12 jw-col full-height">
+		<div class="row jw-card gs-game-area">
 			<game-map></game-map>
 		</div>
-		<div class="row gs-status-area">
+		<div class="row jw-card gs-status-area">
 			<!-- Status Area -->
 		</div>
 	</div>
-	<div class="col-sm-4 col-xs-12 full-height">
-		<div class="row gs-history-area">
+	<!-- when screen is md, pull 6 and end up on left -->
+	<!-- on sm or smaller, ignore pull and end in the middle -->
+	<div class="col-md-3 col-md-pull-6 col-sm-12 jw-col full-height">
+		<div class="row jw-card gs-x-area">
+			<!-- X Area -->
+		</div>
+		<div class="row jw-card gs-x-area">
+			<!-- X Area -->
+		</div>
+	</div>
+	<div class="col-md-3 col-sm-12 jw-col full-height">
+		<div class="row jw-card gs-history-area">
 			<!-- History Area -->
 		</div>
-		<div class="row gs-chat-area">
+		<div class="row jw-card gs-chat-area">
 			<!-- Chat Area -->
 		</div>
 	</div>	
