@@ -1,8 +1,10 @@
 <table class="ga-table" style="width:{{game.map.mapTableWidth}}; height:{{game.map.mapTableHeight}};">
 	<tr ng-repeat="mapRow in game.map.data">
 		<td ng-repeat="mapCell in mapRow">
-			<div class="ga-cell animated" id="{{mapCell.id}}"
-			ng-class="(game.map.selectedCell==mapCell.id) ? 'active' : ''" 
+			<div 
+			class="ga-cell animated" 
+			id="{{ mapCell.id }}"
+			ng-class="(game.map.activeCell.id == mapCell.id) ? 'active' : ''" 
 			ng-click="game.map.selectCell(mapCell)">
 		</div>
 	</td>

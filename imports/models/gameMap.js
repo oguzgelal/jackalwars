@@ -7,11 +7,12 @@ class GameMap {
 	constructor(row, col){
 		this.mapRowCnt = row;
 		this.mapColCnt = col;
-		this.selectedCell = "";
+		this.activeCell = null;
 		this.data = [];
 	}
 
-	calculateTableSize(which){
+	calculateTableSize(){
+		// TODO : support larger table sizes better
 		let cellCount = this.mapRowCnt * this.mapColCnt;
 		let cellCountAverage = Math.round(Math.sqrt(this.mapRowCnt * this.mapColCnt));
 		let cellSize = (cellCountAverage * 13);
@@ -30,13 +31,13 @@ class GameMap {
 	};
 
 	selectCell(cell){
-		if (this.selectedCell == cell.id){
-			cell.animateCell('rubberBand');
-			this.selectedCell = "";
+		if (this.activeCell && this.activeCell.id == cell.id){
+			this.activeCell.animateCell('rubberBand');
+			this.activeCell = null;
 		}
 		else{
-			cell.animateCell('rubberBand');
-			this.selectedCell = cell.id;
+			this.activeCell = cell;
+			this.activeCell.animateCell('rubberBand');
 		}
 	};
 
