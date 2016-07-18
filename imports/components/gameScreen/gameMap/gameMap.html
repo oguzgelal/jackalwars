@@ -1,12 +1,18 @@
-<table class="ga-table" style="width:{{game.map.mapTableWidth}}px; height:{{game.map.mapTableHeight}}px;">
-	<tr ng-repeat="mapRow in game.map.data">
-		<td ng-repeat="mapCell in mapRow">
-			<div 
-			class="ga-cell animated" 
-			id="{{ mapCell.id }}"
-			ng-class="(game.map.activeCell.id == mapCell.id) ? 'active' : ''" 
-			ng-click="game.map.selectCell(mapCell)">
-		</div>
-	</td>
-</tr>
-</table>
+<div class="jw-card">
+	<div class="jw-header">Map</div>
+	<div class="ga-table-scroller">
+		<div class="ga-table-holder" style="width:{{game.map.mapTableWidth+40}}px; height:{{game.map.mapTableHeight+40}}px; padding-top: 20px;">
+			<table class="ga-table" style="width:{{game.map.mapTableWidth}}px; height:{{game.map.mapTableHeight}}px;">
+				<tr ng-repeat="mapRow in game.map.data">
+					<td ng-repeat="mapCell in mapRow">
+						<div 
+						class="ga-cell animated" 
+						id="{{ mapCell.id }}"
+						ng-class="(game.map.activeCell.id == mapCell.id) ? 'active' : ''" 
+						ng-click="game.map.selectCell(mapCell)"></div>
+					</td>
+				</tr>
+			</table>
+		</div>	
+	</div>
+</div>

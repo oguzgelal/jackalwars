@@ -1,24 +1,17 @@
 @import "{}/imports/components/gameScreen/gameMap/gameMap.less";
+@import "{}/imports/components/gameScreen/infoArea/infoArea.less";
+@import "{}/imports/components/gameScreen/historyArea/historyArea.less";
+@import "{}/imports/components/gameScreen/playerArea/playerArea.less";
+@import "{}/imports/components/gameScreen/chatArea/chatArea.less";
+@import "{}/imports/components/gameScreen/controlArea/controlArea.less";
 
-.gs-game-area {
-	overflow: scroll;
-	margin-top: 30px;
-	@media @xs {
-	}
-}
-.gs-status-area {
-	margin-top: 30px;
-	height: 30%;
-}
-.gs-history-area {
-	margin-top: 30px;
-	height: 50%;
-}
-.gs-chat-area {
-	margin-top: 30px;
-	height: 50%;
-}
-.gs-x-area {
-	margin-top: 30px;
-	height: 50%;
+.gs-container {
+	padding-top: 20px;
+	@media @xs { padding-top: 8px; }
+	.gs-area {
+		height: auto;
+		min-height: 150px;
+		margin: 10px -10px;
+		@media @xs { margin: 10px 0; }
+	}	
 }

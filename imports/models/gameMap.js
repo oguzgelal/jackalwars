@@ -32,7 +32,6 @@ class GameMap {
 
 	selectCell(cell){
 		if (this.activeCell && this.activeCell.id == cell.id){
-			this.activeCell.animateCell('rubberBand');
 			this.activeCell = null;
 		}
 		else{

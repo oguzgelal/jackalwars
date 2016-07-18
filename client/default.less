@@ -1,6 +1,9 @@
 @import "./variables.less";
 @import "./mixins.less";
 
+html, body, * {
+	font-family: 'Ubuntu', sans-serif;
+}
 // Default styles
 html, body, .full-height {
 	height: 100%;
@@ -17,10 +20,26 @@ body {
 }
 
 .jw-card {
+	position: relative;
 	margin: auto;
 	width: 100%;
 	background-color: white;
-	border-radius: 5px;
-	padding: 20px;
-	@media @xs {}
+	border: 1px solid;
+	border-color: @card-border-color;
+	border-radius: 3px;
+	min-height: 150px; // TODO : remove later
+	.jw-header {
+		width: 100%;
+		height: @card-header-height;
+		line-height: @card-header-height;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 500;
+		color: @card-header-title-color;
+		padding: 0 20px;
+		border-bottom: 1px solid;
+		border-color: @card-border-color;
+		background-color: whitesmoke;
+	}
 }
