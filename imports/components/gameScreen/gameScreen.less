@@ -1,4 +1,4 @@
-@import "{}/imports/components/gameScreen/gameArea/gameArea.less";
+@import "{}/imports/components/gameScreen/gameMap/gameMap.less";
 
 .gs-game-area {
 	height: 75%;
@@ -7,6 +7,10 @@
 	background-color: white;
 	margin-top: 5%;
 	border-radius: 8px;
+	@media @xs {
+		margin-top: 0;
+		border-radius: 0;
+	}
 }
 .gs-status-area {
 	height: 20%;

@@ -5,3 +5,12 @@
 	-ms-transition: @vars;  
 	transition: @vars;
 }
+
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+@xs: ~"only screen and (max-width:767px)";
+@sm: ~"only screen and (min-width:@{screen-sm-min})";
+@md: ~"only screen and (min-width:@{screen-md-min})";
+@lg: ~"only screen and (min-width:@{screen-lg-min})";
