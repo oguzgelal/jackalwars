@@ -53,11 +53,26 @@ body {
 			top: 11px;
 			right: 15px;
 		}
-		.jw-toggle:hover {
-			cursor: pointer;
+		.jw-toggle:hover { cursor: pointer; }
+		.jw-expand {
+			font-size: 15px;
+			color: @card-header-caret-color;
+			position: absolute;
+			top: 13px;
+			right: 15px;
 		}
+		.jw-title:hover { cursor: move; }
 	}
 	.jw-header:hover {
-		cursor: move;
+		cursor: pointer;
 	}
 }
+.jw-fs {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+

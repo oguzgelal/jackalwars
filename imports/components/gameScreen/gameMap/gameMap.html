@@ -1,6 +1,6 @@
-<div class="jw-card">
+<div class="jw-card" ng-class="game.map.mapExtended ? 'jw-fs' : ''">
 	<div class="jw-header">Map
-		<i class="fa fa-angle-down jw-toggle" aria-hidden="true"></i>
+	<i class="fa jw-expand" ng-class="game.map.mapExtended ? 'fa-compress' : 'fa-expand'" ng-init="game.map.mapExtended=false" ng-click="game.map.mapExtended = !game.map.mapExtended" aria-hidden="true"></i>
 	</div>
 	<div class="ga-table-scroller">
 		<div class="ga-table-holder" style="width:{{game.map.mapTableWidth+40}}px; height:{{game.map.mapTableHeight+40}}px; padding-top: 20px;">
