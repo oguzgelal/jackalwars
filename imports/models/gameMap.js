@@ -40,6 +40,20 @@ class GameMap {
 		}
 	};
 
+	expandMap(){
+		this.animateMap('bounceIn');
+		if (!this.mapExtended){ this.mapExtended = true; }
+		else{ this.mapExtended = false; }
+	}
+
+	animateMap(type){
+		angular.element('#gameMap').addClass(type);
+		angular.element('#gameMap').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			angular.element(this).removeClass(type);
+
+		});
+	};
+
 	
 }
 
