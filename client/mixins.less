@@ -1,5 +1,12 @@
 @import "./variables.less";
 
+.noselect() {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none; 
+}
+
 .animate(@vars) {
 	-webkit-transition: @vars;  
 	-moz-transition: @vars;  

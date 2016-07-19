@@ -19,6 +19,9 @@ body {
 	margin: auto;
 }
 
+// JW Card
+// TODO : Move this to a separate less file (along with all its variables)
+
 .jw-card {
 	position: relative;
 	margin: auto;
@@ -29,17 +32,32 @@ body {
 	border-radius: 3px;
 	min-height: 150px; // TODO : remove later
 	.jw-header {
+		position: relative;
 		width: 100%;
 		height: @card-header-height;
 		line-height: @card-header-height;
 		vertical-align: middle;
-		text-align: center;
+		text-align: left;
 		font-size: 18px;
 		font-weight: 500;
 		color: @card-header-title-color;
 		padding: 0 20px;
 		border-bottom: 1px solid;
-		border-color: @card-border-color;
+		border-color: @jw-gray-1;
 		background-color: whitesmoke;
+		.noselect();
+		.jw-toggle {
+			font-size: 20px;
+			color: @card-header-caret-color;
+			position: absolute;
+			top: 11px;
+			right: 15px;
+		}
+		.jw-toggle:hover {
+			cursor: pointer;
+		}
+	}
+	.jw-header:hover {
+		cursor: move;
 	}
 }
