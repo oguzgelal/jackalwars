@@ -41,7 +41,7 @@ class GameMap {
 	};
 
 	expandMap(){
-		this.animateMap('bounceIn');
+		this.animateMap('zoomIn');
 		if (!this.mapExtended){ this.mapExtended = true; }
 		else{ this.mapExtended = false; }
 	}
