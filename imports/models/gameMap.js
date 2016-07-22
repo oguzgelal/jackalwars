@@ -9,7 +9,7 @@ class GameMap {
 		this.mapColCnt = col;
 		this.activeCell = null;
 		this.data = [];
-	}
+	};
 
 	calculateTableSize(){
 		// TODO : support larger table sizes better
