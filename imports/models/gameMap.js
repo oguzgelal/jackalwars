@@ -1,7 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import { Meteor } from 'meteor/meteor';
-import GameMapCell from './gameMapCell.js'
+import GameMapCell from './gameMapCell.js';
 
 class GameMap {
 	constructor(row, col){

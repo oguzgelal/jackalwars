@@ -1,6 +1,7 @@
 // Base Imports
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
+import angularDragula from 'angular-dragula';
 import { Meteor } from 'meteor/meteor';
 // Models
 import Game from '../../models/game.js'
@@ -14,36 +15,63 @@ import playerAreaTemplate from './playerArea/playerArea.html';
 import controlAreaTemplate from './controlArea/controlArea.html';
 
 class GameScreenCtrl {
-	constructor($scope){
+	constructor($scope, $timeout, dragulaService) {
 		$scope.viewModel(this);
-		this.helpers({
-		});
+		this.helpers({});
 
 		$scope.game = new Game();
 		$scope.game.init();
+
+		this.dragulaOptions($scope, dragulaService);
+	}
+
+	dragulaOptions($scope, dragulaService) {
+		dragulaService.options($scope, 'gs-drop-col', {
+			moves: function(el, container, handle){
+				return handle.className.indexOf('gs-drag-handle') !== -1;
+			}
+		});
 	}
 }
 
-export default angular.module('gameScreen', [angularMeteor])
-.component('gameScreen', {
-	templateUrl: template,
-	controller: ['$scope', GameScreenCtrl]
-})
-.directive('gameMap', function(){
-	return { restrict: 'E', templateUrl: gameMapTemplate };
-})
-.directive('infoArea', function(){
-	return { restrict: 'E', templateUrl: infoAreaTemplate };
-})
-.directive('chatArea', function(){
-	return { restrict: 'E', templateUrl: chatAreaTemplate };
-})
-.directive('historyArea', function(){
-	return { restrict: 'E', templateUrl: historyAreaTemplate };
-})
-.directive('playerArea', function(){
-	return { restrict: 'E', templateUrl: playerAreaTemplate };
-})
-.directive('controlArea', function(){
-	return { restrict: 'E', templateUrl: controlAreaTemplate };
-});
+export default angular.module('gameScreen', [angularMeteor, angularDragula(angular)])
+	.component('gameScreen', {
+		templateUrl: template,
+		controller: ['$scope', '$timeout', 'dragulaService', GameScreenCtrl]
+	})
+	.directive('gameMap', function() {
+		return {
+			restrict: 'E',
+			templateUrl: gameMapTemplate
+		};
+	})
+	.directive('infoArea', function() {
+		return {
+			restrict: 'E',
+			templateUrl: infoAreaTemplate
+		};
+	})
+	.directive('chatArea', function() {
+		return {
+			restrict: 'E',
+			templateUrl: chatAreaTemplate
+		};
+	})
+	.directive('historyArea', function() {
+		return {
+			restrict: 'E',
+			templateUrl: historyAreaTemplate
+		};
+	})
+	.directive('playerArea', function() {
+		return {
+			restrict: 'E',
+			templateUrl: playerAreaTemplate
+		};
+	})
+	.directive('controlArea', function() {
+		return {
+			restrict: 'E',
+			templateUrl: controlAreaTemplate
+		};
+	});

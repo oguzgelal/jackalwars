@@ -3,6 +3,7 @@ accounts-facebook@1.0.10
 accounts-oauth@1.1.13
 accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
+ahref:dragula@3.5.4
 allow-deny@1.0.5
 angular-templates@1.0.5
 autoupdate@1.2.11
@@ -19,6 +20,7 @@ caching-html-compiler@1.0.6
 callback-hook@1.0.9
 check@1.2.3
 coffeescript@1.1.4
+cosmos:browserify@0.9.4
 ddp@1.2.5
 ddp-client@1.2.9
 ddp-common@1.2.6

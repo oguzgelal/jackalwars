@@ -1,21 +1,17 @@
 <div class="jw-card animated" ng-class="game.map.mapExtended ? 'jw-fs' : ''" id="gameMap">
-	<div class="jw-header">Map
-	<i class="fa jw-expand" ng-class="game.map.mapExtended ? 'fa-compress' : 'fa-expand'" ng-click="game.map.expandMap()" aria-hidden="true"></i>
+	<div class="jw-header">
+		<span class="jw-title gs-drag-handle">Map</span>
+		<i class="fa jw-expand" ng-class="game.map.mapExtended ? 'fa-compress' : 'fa-expand'" ng-click="game.map.expandMap()" aria-hidden="true"></i>
 	</div>
 	<div class="ga-table-scroller">
 		<div class="ga-table-holder" style="width:{{game.map.mapTableWidth+40}}px; height:{{game.map.mapTableHeight+40}}px; padding-top: 20px;">
 			<table class="ga-table" style="width:{{game.map.mapTableWidth}}px; height:{{game.map.mapTableHeight}}px;">
 				<tr ng-repeat="mapRow in game.map.data">
 					<td ng-repeat="mapCell in mapRow">
-						
-						<div 
-						class="ga-cell animated" 
-						id="{{ mapCell.id }}"
-						ng-class="(game.map.activeCell.id == mapCell.id) ? 'active' : ''" 
-						ng-click="game.map.selectCell(mapCell)"></div>
+						<div class="ga-cell animated" id="{{ mapCell.id }}" ng-class="(game.map.activeCell.id == mapCell.id) ? 'active' : ''" ng-click="game.map.selectCell(mapCell)"></div>
 					</td>
 				</tr>
 			</table>
-		</div>	
+		</div>
 	</div>
 </div>
