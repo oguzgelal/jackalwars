@@ -9,7 +9,7 @@ class GameMap {
 		this.mapColCnt = col;
 		this.activeCell = null;
 		this.data = [];
-	};
+	}
 
 	calculateTableSize(){
 		// TODO : support larger table sizes better
@@ -18,7 +18,7 @@ class GameMap {
 		let cellSize = (cellCountAverage * 13);
 		this.mapTableWidth = (cellSize*this.mapColCnt);
 		this.mapTableHeight = (cellSize*this.mapRowCnt);
-	};
+	}
 
 	resetMap(){
 		for (let i = 0; i < this.mapRowCnt; i++){
@@ -28,7 +28,7 @@ class GameMap {
 			}
 		}
 		this.calculateTableSize();
-	};
+	}
 
 	selectCell(cell){
 		if (this.activeCell && this.activeCell.id == cell.id){
@@ -38,7 +38,7 @@ class GameMap {
 			this.activeCell = cell;
 			this.activeCell.animateCell('rubberBand');
 		}
-	};
+	}
 
 	expandMap(){
 		this.animateMap('zoomIn');
@@ -52,7 +52,7 @@ class GameMap {
 			angular.element(this).removeClass(type);
 
 		});
-	};
+	}
 
 	
 }
