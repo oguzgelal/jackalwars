@@ -19,6 +19,7 @@ class GameMap {
 		this.mapTableWidth = (cellSize*this.mapColCnt);
 		this.mapTableHeight = (cellSize*this.mapRowCnt);
 	}
+	
 	resetMap(){
 		for (let i = 0; i < this.mapRowCnt; i++){
 			this.data[i] = [];
