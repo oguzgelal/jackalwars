@@ -1,8 +1,8 @@
 <div class="jw-card animated" ng-class="game.map.mapExtended ? 'jw-fs' : ''" id="gameMap">
 	<div class="jw-header">
 		<span class="jw-title gs-drag-handle">Map</span>
-		<i class="jw-expand fa" ng-class="game.map.mapExtended ? 'fa-circle-o' : 'fa-dot-circle-o'" ng-click="game.map.expandMap()" aria-hidden="true"></i>
-		<i class="jw-toggle fa fa-angle-down" aria-hidden="true"></i>
+		<i class="jw-header-icon jw-toggle fa fa-angle-down" aria-hidden="true"></i>
+		<i class="jw-header-icon jw-expand fa" ng-class="game.map.mapExtended ? 'fa-dot-circle-o' : 'fa-circle-o'" ng-click="game.map.expandMap()" aria-hidden="true"></i>
 	</div>
 	<div class="ga-table-scroller">
 		<div class="ga-table-holder" style="width:{{game.map.mapTableWidth+40}}px; height:{{game.map.mapTableHeight+40}}px; padding-top: 20px;">
