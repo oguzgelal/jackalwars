@@ -37,7 +37,7 @@ body {
 	background-color: white;
 	border: 1px solid;
 	border-color: @card-border-color;
-	border-radius: 3px;
+	border-radius: @card-header-border-radius;
 	min-height: 150px; // TODO : remove later
 	.jw-header {
 		position: relative;
@@ -52,7 +52,7 @@ body {
 		padding: 0 20px;
 		border-bottom: 1px solid;
 		border-color: @jw-gray-1;
-		background-color: whitesmoke;
+		background-color: @card-header-background-color;
 		.noselect();
 		.jw-header-icon {
 			float: right;
@@ -63,9 +63,6 @@ body {
 		.jw-toggle {
 			font-size: 20px;
 			color: @card-header-caret-color;
-			//position: absolute;
-			//top: 11px;
-			//right: 15px;
 		}
 		.jw-toggle:hover {
 			cursor: pointer;
@@ -73,9 +70,6 @@ body {
 		.jw-expand {
 			font-size: 15px;
 			color: @card-header-caret-color;
-			//position: absolute;
-			//top: 13px;
-			//right: 15px;
 		}
 		.jw-title:hover {
 			cursor: move;
