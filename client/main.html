@@ -4,8 +4,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=latin-ext" rel="stylesheet">
 </head>
 
-<body>
-	<div class="container-fluid main-container full-height" ng-app="jackal-wars">
-		<game-screen></game-screen>
-	</div>
+<body ng-app="jackal-wars" ng-controller="MainCtrl">
+	<div ng-if="!user"><login-screen></login-screen></div>
+	<div ng-if="user"><lobby-screen></lobby-screen></div>
+	<!--<game-screen></game-screen>-->
 </body>
