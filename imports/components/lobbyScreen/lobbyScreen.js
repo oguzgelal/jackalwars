@@ -1,6 +1,7 @@
 // Base Imports
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
+import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 // Models
 import Game from '../../models/game.js'
@@ -17,10 +18,16 @@ class LobbyScreenCtrl {
 	}
 }
 
-export default angular.module('lobbyScreen', [angularMeteor])
+export default angular.module('lobbyScreen', [angularMeteor, uiRouter])
 .component('lobbyScreen', {
 	templateUrl: template,
 	controller: ['$scope', LobbyScreenCtrl]
+})
+.config(function($stateProvider){
+	$stateProvider.state('lobby', {
+		url: '/lobby',
+		template: '<lobby-screen></lobby-screen>'
+	});
 })
 .directive('onlineArea', function() {
 	return {

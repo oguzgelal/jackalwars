@@ -2,6 +2,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import angularDragula from 'angular-dragula';
+import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 // Models
 import Game from '../../models/game.js'
@@ -34,44 +35,50 @@ class GameScreenCtrl {
 	}
 }
 
-export default angular.module('gameScreen', [angularMeteor, angularDragula(angular)])
-	.component('gameScreen', {
-		templateUrl: template,
-		controller: ['$scope', '$timeout', 'dragulaService', GameScreenCtrl]
-	})
-	.directive('gameMap', function() {
-		return {
-			restrict: 'E',
-			templateUrl: gameMapTemplate
-		};
-	})
-	.directive('infoArea', function() {
-		return {
-			restrict: 'E',
-			templateUrl: infoAreaTemplate
-		};
-	})
-	.directive('chatArea', function() {
-		return {
-			restrict: 'E',
-			templateUrl: chatAreaTemplate
-		};
-	})
-	.directive('historyArea', function() {
-		return {
-			restrict: 'E',
-			templateUrl: historyAreaTemplate
-		};
-	})
-	.directive('playerArea', function() {
-		return {
-			restrict: 'E',
-			templateUrl: playerAreaTemplate
-		};
-	})
-	.directive('controlArea', function() {
-		return {
-			restrict: 'E',
-			templateUrl: controlAreaTemplate
-		};
+export default angular.module('gameScreen', [angularMeteor, angularDragula(angular), uiRouter])
+.component('gameScreen', {
+	templateUrl: template,
+	controller: ['$scope', '$timeout', 'dragulaService', GameScreenCtrl]
+})
+.config(function($stateProvider){
+	$stateProvider.state('game', {
+		url: '/game',
+		template: '<game-screen></game-screen>'
 	});
+})
+.directive('gameMap', function() {
+	return {
+		restrict: 'E',
+		templateUrl: gameMapTemplate
+	};
+})
+.directive('infoArea', function() {
+	return {
+		restrict: 'E',
+		templateUrl: infoAreaTemplate
+	};
+})
+.directive('chatArea', function() {
+	return {
+		restrict: 'E',
+		templateUrl: chatAreaTemplate
+	};
+})
+.directive('historyArea', function() {
+	return {
+		restrict: 'E',
+		templateUrl: historyAreaTemplate
+	};
+})
+.directive('playerArea', function() {
+	return {
+		restrict: 'E',
+		templateUrl: playerAreaTemplate
+	};
+})
+.directive('controlArea', function() {
+	return {
+		restrict: 'E',
+		templateUrl: controlAreaTemplate
+	};
+});

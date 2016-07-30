@@ -1,1 +1,3 @@
-Login
+
+<button ng-if="!$ctrl.user" ng-click="$ctrl.loginWithFacebook()">Login</button>
+<div ng-if="$ctrl.user">Welcome, {{ $ctrl.user.profile.name }}. <button ng-click="$ctrl.logout()">Logout</button></div>

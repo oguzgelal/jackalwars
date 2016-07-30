@@ -4,19 +4,13 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 // Templates
-import template from './loginScreen.html';
+import template from './homeScreen.html';
 
-class LoginScreenCtrl {
+class HomeScreenCtrl {
 	constructor($scope) {
 		$scope.viewModel(this);
 		this.helpers({
 			user(){ return Meteor.user(); } 
-		});
-	}
-
-	loginWithFacebook(){
-		Meteor.loginWithFacebook({}, function(){
-			console.log("logged in");
 		});
 	}
 
@@ -27,14 +21,14 @@ class LoginScreenCtrl {
 	}
 }
 
-export default angular.module('loginScreen', [angularMeteor, uiRouter])
-.component('loginScreen', {
+export default angular.module('homeScreen', [angularMeteor, uiRouter])
+.component('homeScreen', {
 	templateUrl: template,
-	controller: ['$scope', LoginScreenCtrl]
+	controller: ['$scope', HomeScreenCtrl]
 })
 .config(function($stateProvider){
-	$stateProvider.state('login', {
-		url: '/login',
-		template: '<login-screen></login-screen>'
+	$stateProvider.state('home', {
+		url: '/',
+		template: '<home-screen></home-screen>'
 	});
 });

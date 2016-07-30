@@ -1,0 +1,8 @@
+<div>
+	<span>Welcome{{ $ctrl.user ? ', '+$ctrl.user.profile.name : ' to JackalWars !' }}</span>
+	<a ng-if="$ctrl.user" href="#" ng-click="$ctrl.logout()"> (logout)</a>
+</div>
+<div>
+	<a ng-if="!$ctrl.user" href="/login">Login</a><br>
+	<a ng-if="$ctrl.user" href="/lobby">Lobby</a><br>
+</div>

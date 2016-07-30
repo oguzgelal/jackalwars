@@ -2,10 +2,10 @@
 	<title>Jackal Wars</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=latin-ext" rel="stylesheet">
+
+	<base href="/">
 </head>
 
 <body ng-app="jackal-wars" ng-controller="MainCtrl">
-	<div ng-if="!user"><login-screen></login-screen></div>
-	<div ng-if="user"><lobby-screen></lobby-screen></div>
-	<!--<game-screen></game-screen>-->
+	<div ui-view=""></div>
 </body>
